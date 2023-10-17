@@ -26,7 +26,7 @@ wrangler login
 git clone git@github.com:intelliconnect/cloudflare-serverless-rust.git
 
 # change to the project directory
-cd cloudflare-serverless
+cd cloudflare-serverless-rust
 ```
 
 ## get your account id
