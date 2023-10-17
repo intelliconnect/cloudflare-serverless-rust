@@ -1,6 +1,6 @@
 # Steps to run the project
 
-## set up the wrangler cli
+## Set up the wrangler cli
 
 > you can follow [this](https://developers.cloudflare.com/workers/get-started/guide) tutorial or use below commands.
 
@@ -19,7 +19,7 @@ wrangler --version
 wrangler login
 ```
 
-## clone this repository
+## Clone this repository
 
 ```bash
 # clone this repo
@@ -29,7 +29,7 @@ git clone git@github.com:intelliconnect/cloudflare-serverless-rust.git
 cd cloudflare-serverless-rust
 ```
 
-## get your account id
+## Get your account id
 
 > get your account id from your dashbord or use below command.
 
@@ -45,7 +45,7 @@ wrangler whoami
 +----------------------------------+----------------------------------+
 ```
 
-put this account id into wrangler.toml file.
+Put this account id into wrangler.toml file.
 
 ```text
 # wrangler.toml
@@ -56,9 +56,9 @@ compatibility_date = "2023-01-10"
 account_id = "enter your account id"
 ```
 
-## create a kv store
+## Create a kv store
 
-> you can use [this](https://developers.cloudflare.com/workers/tutorials/workers-kv-from-rust) tutorial for more details.
+> You can use [this](https://developers.cloudflare.com/workers/tutorials/workers-kv-from-rust) tutorial for more details.
 
 ```bash
 # create kv store with name KV_FROM_RUST
@@ -73,16 +73,16 @@ kv_namespaces = [
 
 add the above config to wrangler.toml
 
-## get the Data api secret key for mongodb
+## Get the Data api secret key for mongodb
 
 Goto the mongodb dashboard. in the left navigation bar under data service click on the Data API link.
 create a API key and ***store it somewhere secure*** since, it will appear only once and it has access to the database.
 
 ***In the lib.rs file change your cluster name, database name and the collection name.***
 
-### create a secret in wrangler to store the secret key
+### Create a secret in wrangler to store the secret key
 
-> we will create a secret in wrangler to store the Data API key.
+> We will create a secret in wrangler to store the Data API key.
 
 ```bash
 # create a secret with name mongo_data_api_key
@@ -108,7 +108,7 @@ store the name of the key in wrangler.toml file and comment it out. it's just fo
 # mongo_data_api_key
 ```
 
-## running the project
+## Running the project
 
 ```bash
 # compiles your project to WebAssembly and will warn of any issues
@@ -134,7 +134,7 @@ wrangler publish
 
 ```
 
-when the workers_dev field in wrangler.toml is true, it is published to *.workers.dev domain.
+When the workers_dev field in wrangler.toml is true, it is published to *.workers.dev domain.
 
 to publish it to a registered domain refer [here](https://developers.cloudflare.com/workers/get-started/guide#optional-configure-for-deploying-to-a-registered-domain).
 
