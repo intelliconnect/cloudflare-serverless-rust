@@ -1,0 +1,22 @@
+name = "my-wrangler-app"
+main = "build/worker/shim.mjs"
+workers_dev = true
+compatibility_date = "2023-10-17"
+
+# create kv store and put id below to access any kv store (replace the below config)
+# kv_namespaces = [
+#       { binding = "KV_FROM_RUST", id = "*******************" }
+# ]
+
+[vars]
+WORKERS_RS_VERSION = "0.0.18"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release" # required
+
+[[rules]]
+globs = [ "**/*.wasm" ]
+type = "CompiledWasm"
+
+# [SECRETS] (this is just for refrence)
+# mongo_data_api_key
